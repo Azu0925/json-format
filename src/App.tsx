@@ -14,9 +14,7 @@ function App() {
         </form>
       </div>
       <div>
-        <form>
-          <Textarea value={jsonText} />
-        </form>
+        <Textarea value={jsonText} readOnly />
       </div>
     </div>
   )
