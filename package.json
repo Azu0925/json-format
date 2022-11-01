@@ -32,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build",
-"fix": "run-s fix:{prettier,eslint}",
+    "fix": "run-s fix:{prettier,eslint}",
     "fix:eslint": "eslint --fix ./src",
     "fix:prettier": "prettier --write ./src"
   },
