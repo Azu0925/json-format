@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Textarea } from '@chakra-ui/react'
 import './App.css';
 
 function App() {
+    const [jsonText, setJsonText] = useState("")
+    const handleChangeInputText = (e: React.ChangeEvent<HTMLTextAreaElement>) => setJsonText(JSON.stringify(JSON.parse(e.target.value), null, 2))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>
+            <form>
+                <Textarea onChange={handleChangeInputText} />
+            </form>
+        </div>
+        <div>
+            <form>
+
+                <Textarea value={jsonText} />
+            </form>
+        </div>
     </div>
   );
 }
